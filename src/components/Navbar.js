@@ -1,8 +1,9 @@
 import React from 'react';
 function Navbar({ currentPage, handlePageChange }) {
        return (
-        <ul className="nav nav-tabs">
-          <li className="nav-item">
+        <nav>
+        <ul className="nav">
+          <li className="nav-item nav-link">
             <a
               href="#About me"
               onClick={() => handlePageChange('About')}
@@ -39,7 +40,8 @@ function Navbar({ currentPage, handlePageChange }) {
             </a>
           </li>
         </ul>
-      );
-    }
+      </nav>
+     );
+   }
 
 export default Navbar;
