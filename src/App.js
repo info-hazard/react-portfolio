@@ -1,6 +1,6 @@
 import React from "react";
 import Body from "./components/Body"
 
-const App = () => <PortfolioContainer />;
+const App = () => <Body />;
 
 export default App;
