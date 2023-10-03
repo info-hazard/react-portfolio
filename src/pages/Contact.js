@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { validateEmail } from "../utils/helpers";
 
   function Contact() {
     const [email, setEmail] = useState("");
@@ -19,14 +20,36 @@ import React, { useState } from "react";
         setMessage(inputValue);
       }
     };
+
+    const handleFormSubmit = (e) => {
+      e.preventDefault();
   
+      if (!validateEmail(email)) {
+        setErrorMessage("Email is invalid");
+        return;
+      }
+      if (!name) {
+        setErrorMessage(`Please enter name`);
+        return;
+      }
+      if (!message) {
+        setErrorMessage(`Please enter message`);
+        return;
+      }
+  
+      setName("");
+      setMessage("");
+      setEmail("");
+      setErrorMessage("");
+    };
+
   return (
     <div>
       <p>Contact</p>
       <div className="d-flex flex-column align-items-center justify-content-center">
         <form className="form">
           <div className="form-group">
-            <label htmlFor="name" className="text-white">
+            <label htmlFor="name" className="text-black">
               Name:
             </label>
             <input
@@ -38,7 +61,7 @@ import React, { useState } from "react";
             />
           </div>
           <div className="form-group">
-            <label htmlFor="email" className="text-white">
+            <label htmlFor="email" className="text-black">
               Email:
             </label>
             <input
@@ -50,7 +73,7 @@ import React, { useState } from "react";
             />
           </div>
           <div className="form-group">
-            <label htmlFor="message" className="text-white">
+            <label htmlFor="message" className="text-black">
               Message:
             </label>
             <input
