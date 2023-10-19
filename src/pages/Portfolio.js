@@ -112,8 +112,26 @@ export default function Portfolio() {
             </a>
           </div>
         </div>
+        <div className="col-md-4 align-items-center justify-content-center">
+          <div style={{ height: "500px", width: "500px" }}>
+          <h2>This or That!</h2>
+            <a
+              href="https://this-or-that-5dce821d9570.herokuapp.com/"
+              data-toggle="tooltip"
+              data-placement="top"
+              title="This or That"
+            >
+              <img
+                src="thisorthat.png"
+                alt="Survey Project"
+                className="img-fluid"
+                style={{ width: "100%", height: "100%", objectFit: "cover" }}
+              />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
-    </div>
+  </div>
   );
 }
